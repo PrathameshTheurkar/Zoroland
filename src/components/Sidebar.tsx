@@ -9,10 +9,6 @@ import {
   Tv,
   Clapperboard,
   SlidersHorizontal,
-  ScanLine,
-  MessageCircleHeart,
-  BookMarked,
-  History,
 } from "lucide-react";
 import Link from "next/link";
 import { useContext } from "react";
@@ -45,26 +41,6 @@ const Sidebar = () => {
       route: "/genres",
       icons: SlidersHorizontal,
     },
-    {
-      name: "AniScan",
-      route: "/aniscan",
-      icons: ScanLine,
-    },
-    {
-      name: "Waifu",
-      route: "/waifu",
-      icons: MessageCircleHeart,
-    },
-    {
-      name: "Bookmark",
-      route: "/bookmark",
-      icons: BookMarked,
-    },
-    {
-      name: "History",
-      route: "/history",
-      icons: History,
-    },
   ];
 
   return (
@@ -80,7 +56,7 @@ const Sidebar = () => {
             <Link
               href={item.route}
               key={index}
-              className="flex items-center gap-2 p-2 pl-5 py-5 duration-200  transition-all hover:scale-90"
+              className="flex items-center gap-2 p-2 pl-5 py-8 duration-200  transition-all hover:scale-90"
             >
               <Icon size={20} />
               <h1>{item.name}</h1>
@@ -96,7 +72,7 @@ const Sidebar = () => {
             <Link
               href={item.route}
               key={index}
-              className="flex items-center gap-2 p-2 pl-5 py-5 duration-200  transition-all hover:scale-90"
+              className="flex items-center gap-2 p-2 pl-5 py-8 duration-200  transition-all hover:scale-90"
             >
               <Icon size={20} />
               <h1>{item.name}</h1>

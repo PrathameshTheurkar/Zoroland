@@ -24,6 +24,7 @@ const Popular = () => {
     const fetchData = async () => {
       const data = await getPopularAnime();
       setAnimes(data);
+      console.log(data)
     };
     fetchData();
   }, []);
@@ -33,8 +34,8 @@ const Popular = () => {
         const {data} = await axios.get("http://localhost:4000/anime/gogoanime/popular", {params: {page: index + 1}});
     if(animes)
     setAnimes([...animes, ...data.results]);
-
-    data.results.length > 0 ? setHasMore(true) : setHasMore(false);
+  
+    setHasMore(data.results.length > 0);
     }catch(err){
         if (err instanceof Error) {
             throw new Error(err.message);
@@ -49,7 +50,7 @@ const Popular = () => {
   }
 
   return <div className="flex flex-col">
-    Popular Page...
+    <p className="text-2xl font-bold mb-8">Popular</p>
     <InfiniteScroll
     dataLength={animes?.length || 0}
     next={fetchMoreData}
@@ -58,7 +59,7 @@ const Popular = () => {
     className="flex flex-wrap gap-4"
     >
     {animes && animes?.map((anime, index) => {
-        return <AnimeCard key={index} id={anime.id} title={anime.title} image={anime.image} url={anime.url} />
+        return <AnimeCard key={index} title={anime.title} image={anime.image} url={anime.url}/>
     })}
     </InfiniteScroll>
     </div>;

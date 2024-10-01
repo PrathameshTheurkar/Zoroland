@@ -24,7 +24,7 @@ const Navbar = () => {
           <Menu size={25} onClick={handleOpenSidebar} />
         </span>
         <Link href='/'>
-        <p className="flex items-center text-2xl font-bold">
+      <p className="flex items-center text-2xl font-bold">
           <span className="duration-200  transition-all hover:scale-125">Z</span>
           <span className="duration-200  transition-all hover:scale-125">o</span>
           <span className="duration-200  transition-all hover:scale-125">r</span>
