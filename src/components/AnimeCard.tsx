@@ -8,7 +8,7 @@ interface Anime {
 
 const AnimeCard = ({title, image, url }: Anime) => {
   return (
-    <div className="w-48 h-80 border-2 border-white/10 rounded-md flex flex-col ">
+    <div className="w-48 h-80 border-2 border-white/10 rounded-md flex flex-col duration-200 hover:scale-95">
       <div>
         <Link href={url}>
           <img

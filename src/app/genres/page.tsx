@@ -1,10 +1,7 @@
 "use client";
-import AnimeCard from "@/components/AnimeCard";
 import { getGenresList } from "@/lib/FetchAnimeApi";
-import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
 
 interface Anime {
   id: string;
@@ -13,8 +10,6 @@ interface Anime {
 
 const Genres = () => {
   const [animes, setAnimes] = useState<Anime[]>();
-  const [hasMore, setHasMore] = useState<boolean>(true);
-  const [index, setIndex] = useState<number>(1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +28,7 @@ const Genres = () => {
           animes?.map((anime, index) => {
             return (
               <div
-                className="w-72 h-48 border-2 border-white/10 rounded-md flex justify-center items-center"
+                className="w-72 h-48 border-2 border-white/10 rounded-md flex justify-center items-center duration-200 hover:scale-95"
                 key={index}
               >
                 <div>
