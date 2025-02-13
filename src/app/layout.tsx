@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import Footer from "@/components/Footer";
 import OpenSideBar from "@/context/OpenSideBarContext";
 
 const geistSans = localFont({
@@ -35,7 +36,10 @@ export default function RootLayout({
           <main className="min-h-screen w-full">
           <Navbar />
           <Sidebar />
-          <section className="ml-0 md:ml-56 mt-5 p-5 overflow-x-hidden">{children}</section>
+          <section className="ml-0 md:ml-52 mt-0 p-5 overflow-x-hidden">{children}</section>
+          <div className="ml-0 md:ml-52 p-5">
+          <Footer />
+          </div>
           </main>
         </OpenSideBar>
       </body>

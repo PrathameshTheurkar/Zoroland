@@ -17,23 +17,26 @@ const Navbar = () => {
     console.log("isOpen clicked");
   };
 
+  const Title = ["Z", "o", "r", "o", "l", "a", "n", "d"];
+
   return (
-    <div className="sticky top-0 w-full px-10 py-5 flex justify-between bg-transparent backdrop-blur-md border-b-2 border-white/10">
+    <div className="z-50 sticky top-0 w-full px-10 py-5 flex justify-between bg-transparent backdrop-blur-md border-b-2 border-white/10">
       <div className="flex gap-3">
         <span className="md:hidden flex justify-center items-center w-full cursor-pointer">
           <Menu size={25} onClick={handleOpenSidebar} />
         </span>
-        <Link href='/'>
-      <p className="flex items-center text-2xl font-bold">
-          <span className="duration-200  transition-all hover:scale-125">Z</span>
-          <span className="duration-200  transition-all hover:scale-125">o</span>
-          <span className="duration-200  transition-all hover:scale-125">r</span>
-          <span className="duration-200  transition-all hover:scale-125">o</span>
-          <span className="duration-200  transition-all hover:scale-125">l</span>
-          <span className="duration-200  transition-all hover:scale-125">a</span>
-          <span className="duration-200  transition-all hover:scale-125">n</span>
-          <span className="duration-200  transition-all hover:scale-125">d</span>
-        </p>
+        <Link href="/">
+          <p className="flex items-center text-2xl font-bold">
+            {Title.map((letter, index) => {
+              return (
+                <>
+                  <span key={index} className="duration-200  transition-all hover:scale-125">
+                    {letter}
+                  </span>
+                </>
+              );
+            })}
+          </p>
         </Link>
       </div>
       <div className="hidden md:flex w-auto gap-4 ">
@@ -51,9 +54,9 @@ const Navbar = () => {
             placeholder="Search Anime.."
           />
         </div>
-        <button className="bg-white px-4 text-black rounded-md duration-150 hover:bg-transparent hover:border border-white hover:text-white">
+        {/* <button className="bg-white px-4 text-black rounded-md duration-150 hover:bg-transparent hover:border border-white hover:text-white">
           Login
-        </button>
+        </button> */}
       </div>
     </div>
   );

@@ -22,7 +22,6 @@ const Movie = () => {
     const fetchData = async () => {
       const data = await getMovies();
       setAnimes(data);
-      console.log(data)
     };
     fetchData();
   }, []);

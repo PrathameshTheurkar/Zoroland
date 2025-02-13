@@ -1,5 +1,6 @@
 'use client'
 import AnimeCard from "@/components/AnimeCard";
+import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { getPopularAnime } from "@/lib/FetchAnimeApi";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -24,7 +25,6 @@ const Popular = () => {
     const fetchData = async () => {
       const data = await getPopularAnime();
       setAnimes(data);
-      console.log(data)
     };
     fetchData();
   }, []);
@@ -55,7 +55,7 @@ const Popular = () => {
     dataLength={animes?.length || 0}
     next={fetchMoreData}
     hasMore={hasMore}
-    loader={<h4>Loading...</h4>}
+    loader={<LoadingSkeleton/>}
     className="flex flex-wrap gap-4"
     >
     {animes && animes?.map((anime, index) => {
