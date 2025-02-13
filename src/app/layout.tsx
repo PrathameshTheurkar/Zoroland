@@ -34,12 +34,16 @@ export default function RootLayout({
       >
         <OpenSideBar>
           <main className="min-h-screen w-full">
-          <Navbar />
-          <Sidebar />
-          <section className="ml-0 md:ml-52 mt-0 p-5 overflow-x-hidden">{children}</section>
-          <div className="ml-0 md:ml-52 p-5">
-          <Footer />
-          </div>
+            <Navbar />
+            <Sidebar />
+            <section className="ml-0 md:ml-52 mt-0 p-5 overflow-x-hidden">
+              {children}
+            </section>
+            <footer>
+              <div className="ml-0 md:ml-52 p-5 position:absolute bottom-0 left-0">
+                <Footer />
+              </div>
+            </footer>
           </main>
         </OpenSideBar>
       </body>
